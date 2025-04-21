@@ -1,0 +1,9 @@
+@mixin h_f($bg-color) {
+  height: 100px;
+  width: 400px;
+  background-color: $bg-color;
+}
+
+@mixin display() {
+  display: flex;
+}

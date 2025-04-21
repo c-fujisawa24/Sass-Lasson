@@ -1,0 +1,81 @@
+@use 'utils';
+
+.header {
+  @include utils.h_f(utils.$navy);
+  @include utils.display();
+  justify-content: end;
+
+  &_box {
+    @include utils.display();
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: utils.$white;
+
+    & > li {
+      list-style: none;
+      margin-left: 10px;
+
+      &:first-child {
+        margin-left: 0px;
+      }
+
+      @each $color in utils.$classNames {
+        $index_key: index(utils.$classNames, $color);
+
+        &.box_color_#{$color} {
+          height: 40px;
+          width: 40px;
+          background-color: nth(utils.$buttonColor, $index_key);
+        }
+      }
+    }
+  }
+}
+
+.content {
+  @include utils.display();
+
+  .sidebar {
+    height: 250px;
+    width: 150px;
+    background-color: utils.$green;
+  }
+
+  .main {
+    height: 250px;
+    width: 250px;
+    background-color: utils.$red;
+    padding-top: 40px;
+    box-sizing: border-box;
+
+    &_boxes {
+      @include utils.display();
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 40px;
+    }
+
+    &_box {
+      background-color: utils.$white;
+      padding: 5px;
+      width: fit-content;
+
+      &_color {
+        @each $color in utils.$classNames {
+          $index_key: index(utils.$classNames, $color);
+
+          &.#{$color} {
+            height: 40px;
+            width: 140px;
+            background-color: nth(utils.$buttonColor, $index_key);
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  @include utils.h_f(utils.$brown);
+}
