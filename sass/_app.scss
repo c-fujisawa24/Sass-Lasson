@@ -2,11 +2,11 @@
 
 .header {
   @include utils.h_f(utils.$navy);
-  @include utils.display();
+  display: flex;
   justify-content: end;
 
   &_box {
-    @include utils.display();
+    display: flex;
     margin-top: 20px;
     margin-right: 20px;
     padding: 10px;
@@ -34,7 +34,7 @@
 }
 
 .content {
-  @include utils.display();
+  display: flex;
 
   .sidebar {
     height: 250px;
@@ -50,7 +50,7 @@
     box-sizing: border-box;
 
     &_boxes {
-      @include utils.display();
+      display: flex;
       flex-direction: column;
       gap: 10px;
       padding-left: 40px;
