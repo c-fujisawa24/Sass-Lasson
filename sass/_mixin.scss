@@ -3,3 +3,9 @@
   width: 400px;
   background-color: $bg-color;
 }
+
+@mixin w_h_b ($width, $height, $bg-color) {
+  width: $width;
+  height: $height;
+  background-color: $bg-color;
+}

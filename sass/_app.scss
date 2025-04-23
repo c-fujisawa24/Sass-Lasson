@@ -24,9 +24,7 @@
         $index_key: index(utils.$classNames, $color);
 
         &.box_color_#{$color} {
-          height: 40px;
-          width: 40px;
-          background-color: nth(utils.$buttonColor, $index_key);
+          @include utils.w_h_b(40px, 40px, nth(utils.$buttonColor, $index_key));
         }
       }
     }
@@ -37,15 +35,11 @@
   display: flex;
 
   .sidebar {
-    height: 250px;
-    width: 150px;
-    background-color: utils.$green;
+    @include utils.w_h_b(150px, 250px, utils.$green);
   }
 
   .main {
-    height: 250px;
-    width: 250px;
-    background-color: utils.$red;
+    @include utils.w_h_b(250px, 250px, utils.$red);
     padding-top: 40px;
     box-sizing: border-box;
 
@@ -66,9 +60,7 @@
           $index_key: index(utils.$classNames, $color);
 
           &.#{$color} {
-            height: 40px;
-            width: 140px;
-            background-color: nth(utils.$buttonColor, $index_key);
+            @include utils.w_h_b(140px, 40px, nth(utils.$buttonColor, $index_key));
           }
         }
       }
